@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import Category from './components/Category'
+import News from './components/News'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component() {
+  render() {
+    const { categories } = this.props
+    return (
+      <div className="App">
+        <Category categories={categories}/>
+        <News />
+      </div>
+    )
+  }
 }
 
-export default App;
+const MapStateToProps = state =>{
+  // destructing de más de un nivel
+  // dentro de categories saca la propiedad de data y la renombre categories
+  const { Categories: {data: categories}} = state
+  return {
+    categories,
+  }
+}
+
+const MapDispatchToProps = dispatch => {
+
+}
+
+export default connect(MapStateToProps, MapDispatchToProps)(App);
