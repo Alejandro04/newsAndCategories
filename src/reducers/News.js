@@ -1,0 +1,35 @@
+import { initialize } from "redux-form"
+
+const ADD_NEWS = 'news/add'
+
+/*
+* payload:
+* id
+* name
+* category_id
+*/
+
+const addNews = payload => ({
+    type: ADD_NEWS,
+
+    payload: {
+        ...payload,
+        id: Math.random().toString(20)
+    }
+})
+
+const initialState = {
+    data: []
+}
+
+export default function reducer(state = initialize, action) {
+    switch (action.type) {
+        case ADD_NEWS:
+            return {
+                ...state,
+                data: [state.data, action.payload]
+            }
+        default:
+            return state
+    }
+}
