@@ -8,7 +8,7 @@ const ADD_CATEGORY = 'category/add'
 * name
 */
 
-const addCategory = payload => ({
+export const addCategory = payload => ({
     type: ADD_CATEGORY,
 
     // mientras se configura el form que devuelva el id

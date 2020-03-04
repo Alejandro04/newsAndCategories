@@ -22,7 +22,7 @@ const initialState = {
     data: []
 }
 
-export default function reducer(state = initialize, action) {
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NEWS:
             return {
