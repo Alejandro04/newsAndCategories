@@ -25,7 +25,7 @@ const initialState = {
     data: [{ id: 1, name: 'Default' }]
 }
 
-export default function reducer(state = initialize, action) {
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_CATEGORY:
             return {
