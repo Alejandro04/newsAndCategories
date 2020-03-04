@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <Category addCategory={addCategory} categories={categories}/>
-       
+        <News news={news}/>
       </div>
     )
   }

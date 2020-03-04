@@ -30,7 +30,7 @@ export default function reducer(state = initialState, action) {
         case ADD_CATEGORY:
             return {
                 ...state,
-                data: [state.data, action.payload]
+                data: [...state.data, action.payload]
                 //también es válido: data: state.data.concat(action.payload)
             }
         default:

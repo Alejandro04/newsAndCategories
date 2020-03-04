@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
-import NewsForm from './CategoryForm'
-import NewsList from './CategoryList'
+import NewsForm from './NewsForm'
+import NewsList from './NewsList'
 
 export default class News extends Component {
     render() {
@@ -8,7 +8,7 @@ export default class News extends Component {
         return (
             <div>
                 <NewsForm onSubmit={addNews}/>
-                <NewsList categories={news}/>
+                <NewsList news={news}/>
             </div>
         )
     }
