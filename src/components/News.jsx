@@ -4,11 +4,16 @@ import NewsList from './NewsList'
 import Fragment from 'render-fragment';
 
 export default class News extends Component {
+    handleSubmit = payload => {
+        const { addNews, selectedCategory } = this.props
+        addNews({ ...payload, categoryId: selectedCategory})
+    }
+
     render() {
-        const { news, addNews } = this.props
+        const { news } = this.props
         return (
             <Fragment>
-                <NewsForm onSubmit={addNews}/>
+                <NewsForm onSubmit={this.handleSubmit}/>
                 <NewsList news={news}/>
             </Fragment>
         )

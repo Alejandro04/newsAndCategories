@@ -5,11 +5,11 @@ import Fragment from 'render-fragment';
 
 export default class Category extends Component {
     render() {
-        const { categories, addCategory } = this.props
+        const { categories, addCategory, selectCategory } = this.props
         return (
             <Fragment>
                 <CategoryForm onSubmit={addCategory}/>
-                <CategoryList categories={categories}/>
+                <CategoryList selectCategory={selectCategory} categories={categories}/>
             </Fragment>
         )
     }

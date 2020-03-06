@@ -9,7 +9,7 @@ const ADD_NEWS = 'news/add'
 * category_id
 */
 
-const addNews = payload => ({
+export const addNews = payload => ({
     type: ADD_NEWS,
 
     payload: {
@@ -27,7 +27,7 @@ export default function reducer(state = initialState, action) {
         case ADD_NEWS:
             return {
                 ...state,
-                data: [state.data, action.payload]
+                data: [...state.data, action.payload]
             }
         default:
             return state
